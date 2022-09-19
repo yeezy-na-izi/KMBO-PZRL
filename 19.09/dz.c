@@ -12,4 +12,6 @@ int main(int argc, char *argv[]) {
         result = (result + number / result) / 2;
     }
     printf("Result %f", result);
+
+    return 0
 }
