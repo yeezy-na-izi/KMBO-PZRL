@@ -1,4 +1,4 @@
-// make algorithm for sqrt of number, number = float number get from cmd
+// make algorithm for sqrt of number, number = float, number get from cmd
 
 
 #include <stdio.h>
@@ -13,5 +13,5 @@ int main(int argc, char *argv[]) {
     }
     printf("Result %f", result);
 
-    return 0
+    return 0;
 }
