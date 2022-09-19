@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < 100; i++) {
         result = (result + number / result) / 2;
     }
-    printf("Result %f", result);
+    printf("Result %f\n", result);
 
     return 0;
 }
