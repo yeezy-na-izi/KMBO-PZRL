@@ -22,6 +22,6 @@ int main() {
     s = m * 12 * y;
 
     printf("Mth payment value: %010.2f\n", m);
-    printf("All payment value: %010.2f", s);
+    printf("All payment value: %010.2f\n", s);
     return 0;
 }

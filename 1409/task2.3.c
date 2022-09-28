@@ -17,6 +17,6 @@ int main() {
     s = PI * r * r;
 
     printf("Square: %.4f\n", s);
-    printf("Perimeter: %.4f", p);
+    printf("Perimeter: %.4f\n", p);
     return 0;
 }

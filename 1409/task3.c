@@ -22,6 +22,6 @@ int main() {
     prod = (n % 10) * (n / 10 % 10) * (n / 100 % 10);
 
     printf("Sum of digits: %*d\n", wide, sum);
-    printf("Product of digits: %*d", wide, prod);
+    printf("Product of digits: %*d\n", wide, prod);
     return 0;
 }

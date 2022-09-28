@@ -26,6 +26,6 @@ int main() {
 
     printf("First point - (%.2f, %.2f)\n", x1, y1);
     printf("Second point - (%.2f, %.2f)\n", x2, y2);
-    printf("Equation: %.2fx + %.2f = y", k, b);
+    printf("Equation: %.2fx + %.2f = y\n", k, b);
     return 0;
 }
