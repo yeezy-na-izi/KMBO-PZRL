@@ -6,10 +6,11 @@
 
 float get_float_number(int min, int max, int accuracy) {
     float number;
-    int min_int = min * pow(10, accuracy);
-    int max_int = max * pow(10, accuracy);
+    accuracy = pow(10, accuracy)
+    int min_int = min * accuracy;
+    int max_int = max * accuracy;
     int number_int = rand() % (max_int - min_int + 1) + min_int;
-    number = (float) number_int / pow(10, accuracy);
+    number = (float) number_int / accuracy;
     return number;
 }
 
