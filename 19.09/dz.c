@@ -1,6 +1,3 @@
-// make algorithm for sqrt of number, number = float, number get from cmd
-
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,7 +8,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < 100; i++) {
         result = (result + number / result) / 2;
     }
-    printf("Result %f\n", result);
 
+    printf("Result %f\n", result);
     return 0;
 }
