@@ -101,8 +101,8 @@ int main() {
 
     printf("Min: %d\n", min);
     printf("Max: %d\n", max);
-    printf("Median: %.2f\n", median);
     printf("Scope: %d\n", scope);
+    printf("Median: %.2f\n", median);
     printf("Average: %.2f\n", average);
     printf("Fashion: %d\n", fashion);
     return 0;
