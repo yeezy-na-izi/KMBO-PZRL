@@ -8,7 +8,6 @@ int get_rand_number(int min, int max) {
     return number_int;
 }
 
-// quick sort
 void quick_sort(int *vec, int left, int right) {
     int i = left;
     int j = right;
@@ -37,7 +36,6 @@ void quick_sort(int *vec, int left, int right) {
     }
 }
 
-// get fashion
 int get_fashion(int *vec, int len) {
     int fashion = vec[0];
     int fashion_count = 1;
