@@ -25,9 +25,13 @@ int main(int argc, char *argv[]) {
     int *a = (int *) calloc(n, sizeof(int));
     printf("Enter n: ");
     scanf("%d", &n);
+    if (n <= 0) {
+        printf("n must be positive\n");
+        return 1;
+    }
     printf("Enter %d numbers: ", n);
     for (int i = 0; i < n; i++) {
-        scanf("%d ", &a[i]);
+        scanf("%d", &a[i]);
     }
     sort(a, n);
     for (int i = 0; i < n; i++) {
