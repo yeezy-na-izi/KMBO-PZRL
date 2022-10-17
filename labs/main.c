@@ -1,11 +1,7 @@
-// get n, get n numbers, sort them by Selection sort and print them
-
 #include <stdio.h>
 #include <stdlib.h>
 
-
-// selection sort
-void sort(int *a, int n) {
+void sort(float *a, int n) {
     for (int i = 0; i < n; i++) {
         int max = i;
         for (int j = i + 1; j < n; j++) {
@@ -20,24 +16,26 @@ void sort(int *a, int n) {
 }
 
 
-int main(int argc, char *argv[]) {
+int main() {
     int n;
-    int *a = (int *) calloc(n, sizeof(int));
     printf("Enter n: ");
     scanf("%d", &n);
     if (n <= 0) {
         printf("n must be positive\n");
         return 1;
     }
+    float *a = (float *) calloc(n, sizeof(float));
     printf("Enter %d numbers: ", n);
     for (int i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
+        scanf("%f", &a[i]);
     }
     sort(a, n);
+
     for (int i = 0; i < n; i++) {
-        printf("%d ", a[i]);
+        printf("%f ", a[i]);
     }
     printf("\n");
+
     free(a);
     return 0;
 }
