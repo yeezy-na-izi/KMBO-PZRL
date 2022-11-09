@@ -4,7 +4,7 @@
 
 
 int get_rand_number(int min, int max) {
-    int number_int = rand() % (max - min + 1) + min;;
+    int number_int = rand() % (max - min + 1) + min;
     return number_int;
 }
 
@@ -55,7 +55,6 @@ int get_fashion(int *vec, int len) {
     }
     if (current_count > fashion_count) {
         fashion = current;
-        fashion_count = current_count;
     }
     return fashion;
 }

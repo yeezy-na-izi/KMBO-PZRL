@@ -1,5 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-#include "utils.h"
-
+int main() {
+    int x = 0;
+    if (x == 0){
+        int x = 1;
+        printf("%d ", x);
+    }
+    printf("%d\n", x);
+}
