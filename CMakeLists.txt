@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD 99)
 
 
 add_executable(
-        first_sem 0211/task_4.c
+        first_sem 0911/task_5.c
 )
 
 
