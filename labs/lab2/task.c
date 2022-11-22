@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 char *_strremove(char *str, const char ch) {
     char *p = str;
@@ -14,7 +15,7 @@ char *_strremove(char *str, const char ch) {
 }
 
 int _strcountchar(const char *str, const char ch) {
-    if (str == NULL) {
+    if (str == NULL || ch == '\0') {
         return -1;
     }
     int count = 0;
@@ -43,6 +44,95 @@ char *_strdelspaces(char *str) {
     return str;
 }
 
+char *_strtolower(char *str) {
+    int str_len = strlen(str);
+    for (int i = 0; i < str_len; i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] += 32;
+        }
+    }
+    return str;
+}
+
+char *_strtoupper(char *str) {
+    int str_len = strlen(str);
+    for (int i = 0; i < str_len; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] -= 32;
+        }
+    }
+    return str;
+}
+
+int _strcmp(const char *str1, const char *str2) {
+    int str1_len = strlen(str1);
+    int str2_len = strlen(str2);
+    if (str1_len < str2_len) {
+        return -1;
+    }
+    if (str1_len > str2_len) {
+        return 1;
+    }
+    for (int i = 0; i < str1_len; i++) {
+        if (str1[i] < str2[i]) {
+            return -1;
+        } else if (str1[i] > str2[i]) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+char *_strreverse(const char *str1) {
+    int str1_len = strlen(str1);
+    char *str2 = (char *) malloc(str1_len * sizeof(char));
+    for (int i = 0; i < str1_len; i++) {
+        str2[i] = str1[str1_len - i - 1];
+    }
+    return str2;
+}
+
+
+int _atoi(const char *str) {
+    int str_len = strlen(str);
+    int result = 0;
+    for (int i = 0; i < str_len; i++) {
+        if (str[i] >= '0' && str[i] <= '9') {
+            result = result * 10 + (str[i] - '0');
+        } else {
+            return -1;
+        }
+    }
+    return result;
+}
+
+char *_strchr(char *str, int ch) {
+    int str_len = strlen(str);
+    for (int i = 0; i < str_len; i++) {
+        if (str[i] == ch) {
+            return &str[i];
+        }
+    }
+    return NULL;
+}
+
+char *_strstr(const char *str, const char *substr) {
+    int str_len = strlen(str);
+    int substr_len = strlen(substr);
+    for (int i = 0; i < str_len; i++) {
+        if (str[i] == substr[0]) {
+            int j = 0;
+            while (j < substr_len && str[i + j] == substr[j]) {
+                j++;
+            }
+            if (j == substr_len) {
+                return &str[i];
+            }
+        }
+    }
+    return NULL;
+}
 
 int main() {
     printf("Enter string: ");
