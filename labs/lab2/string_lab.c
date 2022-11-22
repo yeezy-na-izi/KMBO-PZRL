@@ -1,3 +1,4 @@
+#include "string_lab.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -101,7 +102,7 @@ int _atoi(const char *str) {
         if (str[i] >= '0' && str[i] <= '9') {
             result = result * 10 + (str[i] - '0');
         } else {
-            return -1;
+            return 0;
         }
     }
     return result;
@@ -127,22 +128,9 @@ char *_strstr(const char *str, const char *substr) {
                 j++;
             }
             if (j == substr_len) {
-                return &str[i];
+                return (char *) &str[i];
             }
         }
     }
     return NULL;
-}
-
-int main() {
-    printf("Enter string: ");
-    char *str = NULL;
-    size_t size;
-    getline(&str, &size, stdin);
-    printf("Enter char: ");
-    char ch;
-    scanf("%c", &ch);
-    int count = _strcountchar(str, ch);
-    printf("Count: %d\n", count);
-    return 0;
 }
