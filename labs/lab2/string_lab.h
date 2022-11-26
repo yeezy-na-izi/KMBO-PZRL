@@ -1,7 +1,3 @@
-//
-// Created by Максим Хованский on 23.11.2022.
-//
-
 #ifndef FIRST_SEM_STRING_LAB_H
 #define FIRST_SEM_STRING_LAB_H
 
