@@ -3,11 +3,8 @@ project(first_sem C)
 
 set(CMAKE_C_STANDARD 99)
 
-#include_directories(kr)
-
-
 add_executable(
-        first_sem 0911/task_5.c
+        first_sem labs/lab3/lab3.c
 )
 
 
