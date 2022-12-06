@@ -32,7 +32,6 @@ int calculator(char *str) {
     if (num1[0] == '0' && num2[0] == '0') {
         flag = 0;
 
-
     } else if (num2[0] == '0' && num2[1] == 'x' && num1[0] == '0' && num1[1] == 'x') {
         flag = 1;
 
@@ -56,4 +55,8 @@ int main() {
     if (checker == 1) {
         printf("Ошибка: системы счисления не совпадают");
     }
+
+    free(input);
+
+    return 0;
 }
