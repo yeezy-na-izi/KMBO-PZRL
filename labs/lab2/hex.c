@@ -4,15 +4,7 @@
 
 int from_hex(char *number) {
     int result = 0;
-    int flag = 0;
-    for (int i = 0; i < strlen(number); i++) {
-        if (number[i] == 'x') {
-            flag = 1;
-            continue;
-        }
-        if (flag == 0) {
-            continue;
-        }
+    for (int i = 2; i < strlen(number); i++) {
         if (number[i] >= '0' && number[i] <= '9') {
             result = result * 16 + (number[i] - '0');
         } else if (number[i] >= 'a' && number[i] <= 'f') {
@@ -41,7 +33,8 @@ char *to_hex(int number) {
         flag = 1;
     }
     if (flag == 0) {
-        result = (char *) realloc(result, (strlen(result) + 1) * sizeof(char));
+        result = (char *) realloc(result, (strlen(result) + 2) * sizeof(char));
+        result[strlen(result) - 1] = 'x';
         result[strlen(result)] = '0';
     }
     char *result_reversed = (char *) malloc(sizeof(char));
