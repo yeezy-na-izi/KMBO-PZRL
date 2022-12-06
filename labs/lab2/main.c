@@ -28,10 +28,10 @@ int calculator(char *str) {
         }
     }
 
-    printf("%s %s %s", num1, op, num2);
     flag = 0;
     if (num1[0] == '0' && num2[0] == '0') {
         flag = 0;
+
 
     } else if (num2[0] == '0' && num2[1] == 'x' && num1[0] == '0' && num1[1] == 'x') {
         flag = 1;
