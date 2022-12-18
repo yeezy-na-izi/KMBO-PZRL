@@ -104,6 +104,9 @@ int for_one_number(char *str) {
     char number[128];
     memset(number, 0, sizeof(number));
     for (int i = 1; i < strlen(str); i++) {
+        if (isspace(str[i])) {
+            continue;
+        }
         number[strlen(number)] = str[i];
     }
     int flag = check_system(str);
