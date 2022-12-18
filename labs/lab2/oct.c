@@ -5,12 +5,18 @@
 
 int from_oct(char *number) {
     int result = 0;
-    for (int i = 1; i < strlen(number); i++) {
+    int sign = 1;
+    int i = 1;
+    if (number[0] == '-') {
+        sign = -1;
+        i = 2;
+    }
+    for (; i < strlen(number); i++) {
         if (number[i] >= '0' && number[i] <= '7') {
             result = result * 8 + (number[i] - '0');
         }
     }
-    return result;
+    return sign * result;
 }
 
 char *to_oct(int number) {

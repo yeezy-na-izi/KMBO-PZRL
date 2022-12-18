@@ -4,7 +4,13 @@
 
 int from_hex(char *number) {
     int result = 0;
-    for (int i = 2; i < strlen(number); i++) {
+    int sign = 1;
+    int i = 2;
+    if (number[0] == '-') {
+        sign = -1;
+        i = 3;
+    }
+    for (; i < strlen(number); i++) {
         if (number[i] >= '0' && number[i] <= '9') {
             result = result * 16 + (number[i] - '0');
         } else if (number[i] >= 'a' && number[i] <= 'f') {
@@ -13,7 +19,7 @@ int from_hex(char *number) {
             result = result * 16 + (number[i] - 'A' + 10);
         }
     }
-    return result;
+    return sign * result;
 }
 
 

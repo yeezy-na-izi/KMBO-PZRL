@@ -4,12 +4,18 @@
 
 int from_bin(char *number) {
     int result = 0;
-    for (int i = 0; i < strlen(number); i++) {
+    int sign = 1;
+    int i = 0;
+    if (number[0] == '-') {
+        sign = -1;
+        i = 1;
+    }
+    for (; i < strlen(number); i++) {
         if (number[i] >= '0' && number[i] <= '1') {
             result = result * 2 + (number[i] - '0');
         }
     }
-    return result;
+    return sign * result;
 }
 
 char *to_bin(int number) {
