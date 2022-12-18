@@ -4,7 +4,7 @@
 
 int from_bin(char *number) {
     int result = 0;
-    for (int i = 2; i < strlen(number); i++) {
+    for (int i = 0; i < strlen(number); i++) {
         if (number[i] >= '0' && number[i] <= '1') {
             result = result * 2 + (number[i] - '0');
         }
