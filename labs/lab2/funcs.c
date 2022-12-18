@@ -103,15 +103,19 @@ int convert(char *str, int flag) {
 int for_one_number(char *str) {
     char number[128];
     memset(number, 0, sizeof(number));
+
     for (int i = 1; i < strlen(str); i++) {
         if (isspace(str[i])) {
             continue;
         }
         number[strlen(number)] = str[i];
     }
+
     int flag = check_system(str);
     int num = convert(number, flag);
+
     print(~num, flag);
+
     return 0;
 }
 
@@ -120,8 +124,10 @@ int for_two_numbers(char *str) {
     char number2[128];
     memset(number1, 0, sizeof(number1));
     memset(number2, 0, sizeof(number2));
+
     char op;
     int flag = 0;
+
     for (int i = 0; i < strlen(str); i++) {
         if (isspace(str[i])) {
             continue;
@@ -139,15 +145,19 @@ int for_two_numbers(char *str) {
             number2[strlen(number2)] = str[i];
         }
     }
+
     int flag1 = check_system(number1);
     int flag2 = check_system(number2);
     if (flag1 != flag2) {
         return 1;
     }
+
     int num1 = convert(number1, flag1);
     int num2 = convert(number2, flag2);
+
     int result = operation(num1, num2, op);
     print(result, flag1);
+
     return 0;
 }
 
