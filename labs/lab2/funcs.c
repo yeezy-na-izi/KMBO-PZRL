@@ -155,6 +155,15 @@ int for_two_numbers(char *str) {
     int num1 = convert(number1, flag1);
     int num2 = convert(number2, flag2);
 
+    if (op == '/' && num2 == 0) {
+        printf("Ошибка: деление на 0\n");
+        return 0;
+    }
+    if ((op == '&' || op == '|' || op == '^') && (num1 < 0 || num2 < 0)) {
+        printf("Ошибка: операция над отрицательными числами\n");
+        return 0;
+    }
+
     int result = operation(num1, num2, op);
     print(result, flag1);
 
