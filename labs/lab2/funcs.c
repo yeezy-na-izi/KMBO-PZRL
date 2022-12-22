@@ -82,8 +82,23 @@ int check_system(char *str) {
         return 0; // hex
     } else if (str[i] == '0') {
         return 1; // oct
-    } else {
+    } else if (str[i] == '1') {
         return 2; // bin
+    } else {
+        return -1;
+    }
+}
+
+int checker(char *number, int flag) {
+    switch (flag) {
+        case 0:
+            return check_hex(number);
+        case 1:
+            return check_oct(number);
+        case 2:
+            return check_bin(number);
+        default:
+            return 1;
     }
 }
 
@@ -148,8 +163,13 @@ int for_two_numbers(char *str) {
 
     int flag1 = check_system(number1);
     int flag2 = check_system(number2);
-    if (flag1 != flag2) {
+    if (flag1 != flag2 || flag1 == -1 || flag2 == -1) {
         return 1;
+    }
+
+    if (checker(number1, flag1) == 1 || checker(number2, flag2) == 1) {
+        printf("Ошибка: неверное число\n");
+        return 0;
     }
 
     int num1 = convert(number1, flag1);

@@ -2,6 +2,21 @@
 #include <string.h>
 #include <stdlib.h>
 
+int check_bin(char *number) {
+    int i = 0;
+    if (number[0] == '-') {
+        i++;
+    }
+    for (; i < strlen(number); i++) {
+        if (number[i] >= '0' && number[i] <= '1') {
+            continue;
+        } else {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 int from_bin(char *number) {
     int result = 0;
     int sign = 1;

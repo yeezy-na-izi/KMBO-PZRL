@@ -2,6 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 
+int check_hex(char *number) {
+    int i = 2;
+    if (number[0] == '-') {
+        i++;
+    }
+    for (; i < strlen(number); i++) {
+        if ((number[i] >= '0' && number[i] <= '9') ||
+            (number[i] >= 'A' && number[i] <= 'F') ||
+            (number[i] >= 'a' && number[i] <= 'f')
+                ) {
+            continue;
+        } else {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 int from_hex(char *number) {
     int result = 0;
     int sign = 1;

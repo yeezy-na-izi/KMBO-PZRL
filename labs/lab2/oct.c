@@ -2,6 +2,20 @@
 #include <string.h>
 #include <stdlib.h>
 
+int check_oct(char *number) {
+    int i = 1;
+    if (number[0] == '-') {
+        i++;
+    }
+    for (; i < strlen(number); i++) {
+        if (number[i] >= '0' && number[i] <= '7') {
+            continue;
+        } else {
+            return 1;
+        }
+    }
+    return 0;
+}
 
 int from_oct(char *number) {
     int result = 0;
