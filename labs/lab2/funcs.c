@@ -126,7 +126,7 @@ int for_one_number(char *str) {
         number[strlen(number)] = str[i];
     }
 
-    int flag = check_system(str);
+    int flag = check_system(number);
     int num = convert(number, flag);
 
     print(~num, flag);
